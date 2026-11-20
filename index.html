@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Halaman pribadi Sypdn — profil, minat teknologi, dan proyek sistem keamanan kendaraan berbasis ESP32.">
+  <meta name="theme-color" content="#090e1b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sypdn — Teknologi & Proyek">
+  <meta property="og:description" content="Jelajahi profil dan proyek teknologi Sypdn.">
+  <meta property="og:url" content="https://sypdn.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/357958007?v=4">
+  <title>Sypdn — Teknologi &amp; Proyek</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #090e1b;
+      color: #f2f5ff;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      --muted: #9ba8c4;
+      --line: rgb(181 197 231 / 13%);
+      --panel: #111a2b;
+      --accent: #b6f36b;
+      --accent-ink: #17220d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 82% 7%, rgb(91 74 217 / 14%), transparent 34rem),
+        radial-gradient(ellipse at 2% 48%, rgb(54 116 118 / 10%), transparent 32rem),
+        #090e1b;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(100% - 3rem, 1120px);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      display: flex;
+      min-height: 88px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      font-weight: 750;
+      letter-spacing: -0.035em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 2.45rem;
+      height: 2.45rem;
+      place-items: center;
+      border: 1px solid rgb(182 243 107 / 30%);
+      border-radius: 12px;
+      background: rgb(182 243 107 / 10%);
+      color: var(--accent);
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.15rem, 3vw, 2.25rem);
+    }
+
+    .nav-links a {
+      color: #bac4d9;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links .nav-cta {
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #f2f5ff;
+    }
+
+    .hero {
+      display: grid;
+      min-height: 590px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      align-items: center;
+      gap: 4rem;
+      padding-block: 5rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin: 0 0 1.5rem;
+      color: #c4cfdf;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgb(182 243 107 / 65%);
+      content: "";
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 690px;
+      margin-bottom: 1.4rem;
+      font-size: clamp(3.2rem, 7.3vw, 6.1rem);
+      letter-spacing: -0.075em;
+      line-height: 0.99;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-copy {
+      max-width: 555px;
+      margin-bottom: 0;
+      color: #aab6ce;
+      font-size: clamp(1.03rem, 2vw, 1.14rem);
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 3.15rem;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgb(181 197 231 / 35%);
+      background: rgb(255 255 255 / 5%);
+    }
+
+    .button-primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: var(--accent-ink);
+    }
+
+    .button-primary:hover {
+      border-color: #c9ff8c;
+      background: #c9ff8c;
+    }
+
+    .button svg {
+      width: 1rem;
+      height: 1rem;
+      flex: 0 0 auto;
+    }
+
+    .profile-wrap {
+      position: relative;
+      display: grid;
+      min-height: 390px;
+      place-items: center;
+    }
+
+    .profile-glow {
+      position: absolute;
+      width: min(92%, 380px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgb(182 243 107 / 13%), rgb(83 86 179 / 10%) 48%, transparent 72%);
+      filter: blur(7px);
+    }
+
+    .profile-card {
+      position: relative;
+      width: min(100%, 350px);
+      padding: 1.25rem;
+      border: 1px solid rgb(194 208 237 / 17%);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgb(26 38 59 / 97%), rgb(14 22 38 / 97%));
+      box-shadow: 0 28px 80px rgb(0 0 0 / 35%);
+      transform: rotate(2deg);
+    }
+
+    .profile-photo-frame {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1;
+      border: 1px solid rgb(255 255 255 / 10%);
+      border-radius: 20px;
+      background: linear-gradient(135deg, #253353, #171d36);
+    }
+
+    .profile-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.2rem 0.2rem 0.15rem;
+    }
+
+    .profile-caption strong,
+    .profile-caption span {
+      display: block;
+    }
+
+    .profile-caption strong {
+      font-size: 1.05rem;
+    }
+
+    .profile-caption span {
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .profile-arrow {
+      display: grid;
+      width: 2.6rem;
+      height: 2.6rem;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--accent);
+    }
+
+    .profile-arrow svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
+    .section {
+      padding-block: 5.25rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      max-width: 620px;
+      margin-bottom: 2.25rem;
+    }
+
+    .section-kicker {
+      margin-bottom: 0.8rem;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 0.85rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.06em;
+      line-height: 1.1;
+    }
+
+    .section-description {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .interest-card {
+      min-height: 148px;
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgb(19 29 47 / 92%), rgb(14 21 36 / 92%));
+    }
+
+    .interest-number {
+      display: block;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+    }
+
+    .interest-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.05rem;
+    }
+
+    .interest-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+    }
+
+    .project-visual {
+      display: grid;
+      min-height: 310px;
+      place-items: center;
+      padding: 2rem;
+      background:
+        radial-gradient(circle at 50% 45%, rgb(182 243 107 / 14%), transparent 55%),
+        linear-gradient(145deg, #17253a, #111a2a);
+    }
+
+    .project-diagram {
+      display: grid;
+      width: 100%;
+      max-width: 280px;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      transform: rotate(-4deg);
+    }
+
+    .diagram-node {
+      display: grid;
+      min-height: 92px;
+      place-items: center;
+      padding: 0.8rem;
+      border: 1px solid rgb(182 243 107 / 25%);
+      border-radius: 16px;
+      background: rgb(13 23 37 / 82%);
+      color: #dce8f5;
+      font-size: 0.82rem;
+      font-weight: 650;
+      text-align: center;
+    }
+
+    .diagram-node:first-child {
+      grid-row: span 2;
+      min-height: 192px;
+      border-color: rgb(182 243 107 / 42%);
+      color: var(--accent);
+      font-size: 1.05rem;
+    }
+
+    .project-content {
+      padding: clamp(1.6rem, 4vw, 2.75rem);
+    }
+
+    .project-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-content h3 {
+      margin: 0 0 0.85rem;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      letter-spacing: -0.045em;
+    }
+
+    .project-content > p {
+      margin-bottom: 1.35rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.75;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 0.7rem;
+      margin: 0 0 1.55rem;
+      padding: 0;
+      color: #d4dced;
+      font-size: 0.9rem;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+
+    .feature-list li::before {
+      width: 0.4rem;
+      height: 0.4rem;
+      flex: 0 0 auto;
+      margin-top: 0.45rem;
+      border-radius: 50%;
+      background: var(--accent);
+      content: "";
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .tech-list span {
+      padding: 0.42rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #b9c6dc;
+      font-size: 0.76rem;
+      font-weight: 650;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      color: #d0ff9a;
+    }
+
+    .project-link svg {
+      width: 1rem;
+      height: 1rem;
+      transition: transform 160ms ease;
+    }
+
+    .project-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    .contact-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      border: 1px solid rgb(182 243 107 / 22%);
+      border-radius: 22px;
+      background: linear-gradient(110deg, rgb(182 243 107 / 8%), rgb(18 27 44 / 88%) 54%);
+    }
+
+    .contact-panel h2 {
+      margin-bottom: 0.6rem;
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+    }
+
+    .contact-panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .site-footer {
+      display: flex;
+      min-height: 90px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid var(--line);
+      color: #8794ad;
+      font-size: 0.85rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .footer-link {
+      color: #c5d0e2;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 2rem, 620px);
+      }
+
+      .site-header {
+        min-height: 74px;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        font-size: 0.82rem;
+      }
+
+      .nav-links .nav-cta {
+        padding: 0.6rem 0.8rem;
+      }
+
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-block: 4.5rem 3.5rem;
+      }
+
+      .hero-copy {
+        max-width: 620px;
+      }
+
+      .profile-wrap {
+        min-height: 340px;
+        margin-top: 1rem;
+      }
+
+      .profile-card {
+        width: min(82%, 310px);
+      }
+
+      .section {
+        padding-block: 3.75rem;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-visual {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 1.5rem, 460px);
+      }
+
+      .brand {
+        gap: 0.55rem;
+      }
+
+      .brand-mark {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+
+      .nav-links {
+        gap: 0.85rem;
+      }
+
+      .nav-links a {
+        font-size: 0.78rem;
+      }
+
+      .nav-links .nav-cta {
+        padding: 0.55rem 0.7rem;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 14vw, 4.5rem);
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .interest-card {
+        min-height: 125px;
+      }
+
+      .contact-panel {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding-block: 1.25rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a class="brand" href="#beranda" aria-label="Sypdn, kembali ke beranda">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>Sypdn</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#tentang">Tentang</a>
+        <a href="#proyek">Proyek</a>
+        <a class="nav-cta" href="https://github.com/Sypdn" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="beranda" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Profil &amp; ruang berkarya</p>
+          <h1 id="hero-title">Teknologi yang <span>terhubung.</span></h1>
+          <p class="hero-copy">
+            Halo, saya Sypdn. Ini adalah ruang untuk mengenal profil saya,
+            melihat proyek yang sedang saya kembangkan, dan mengikuti eksplorasi
+            saya di bidang teknologi.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#proyek">
+              Lihat proyek
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="button" href="https://github.com/Sypdn" target="_blank" rel="noopener noreferrer">
+              Kunjungi GitHub
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 4h6v6m-1-5-9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-wrap">
+          <div class="profile-glow" aria-hidden="true"></div>
+          <a class="profile-card" href="https://github.com/Sypdn" target="_blank" rel="noopener noreferrer" aria-label="Buka profil GitHub Sypdn">
+            <div class="profile-photo-frame">
+              <img
+                class="profile-photo"
+                src="https://avatars.githubusercontent.com/u/357958007?v=4"
+                alt="Foto profil GitHub Sypdn"
+                width="460"
+                height="460"
+                fetchpriority="high">
+            </div>
+            <div class="profile-caption">
+              <div>
+                <strong>Sypdn</strong>
+                <span>@Sypdn · GitHub</span>
+              </div>
+              <span class="profile-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="tentang" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="section-kicker">Tentang</p>
+          <h2 id="about-title">Minat yang diwujudkan dalam proyek.</h2>
+          <p class="section-description">
+            Dari perangkat fisik hingga antarmuka web, proyek saya mengeksplorasi
+            cara berbagai teknologi bekerja bersama untuk menyelesaikan masalah.
+          </p>
+        </div>
+        <div class="interest-grid">
+          <article class="interest-card">
+            <span class="interest-number">01 / PERANGKAT</span>
+            <h3>Embedded system</h3>
+            <p>Menghubungkan sensor, mikrokontroler, dan perangkat nyata.</p>
+          </article>
+          <article class="interest-card">
+            <span class="interest-number">02 / KONEKTIVITAS</span>
+            <h3>IoT &amp; GPS</h3>
+            <p>Mengirim data perangkat dan lokasi untuk pemantauan jarak jauh.</p>
+          </article>
+          <article class="interest-card">
+            <span class="interest-number">03 / ANTARMUKA</span>
+            <h3>Dashboard web</h3>
+            <p>Menyajikan status dan kontrol sistem dalam satu tampilan.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="proyek" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="section-kicker">Pilihan karya</p>
+          <h2 id="projects-title">Proyek yang sedang saya bangun.</h2>
+          <p class="section-description">
+            Salah satu proyek publik yang menggabungkan perangkat ESP32,
+            pelacakan lokasi, dan dashboard web.
+          </p>
+        </div>
+        <article class="project-card">
+          <div class="project-visual" aria-hidden="true">
+            <div class="project-diagram">
+              <div class="diagram-node">ESP32<br>Controller</div>
+              <div class="diagram-node">Sensor<br>Getaran</div>
+              <div class="diagram-node">GPS<br>Tracker</div>
+              <div class="diagram-node">Web<br>Dashboard</div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-label">
+              <span>Proyek unggulan</span>
+              <span>01</span>
+            </div>
+            <h3>Sistem Keamanan Kendaraan Berbasis ESP32</h3>
+            <p>
+              Sistem pemantauan kendaraan dengan deteksi getaran, kontrol relay,
+              pelacakan GPS, dan dashboard web untuk melihat status perangkat.
+            </p>
+            <ul class="feature-list">
+              <li>Deteksi getaran dengan respons alarm pada perangkat.</li>
+              <li>Pemantauan lokasi GPS dan status melalui dashboard.</li>
+              <li>Kontrol relay dari dashboard maupun remote RF.</li>
+            </ul>
+            <div class="tech-list" aria-label="Teknologi yang digunakan">
+              <span>ESP32</span>
+              <span>C++</span>
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Leaflet</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/Sypdn/Keamanan-kendaraan-berrbasisESP32"
+              target="_blank"
+              rel="noopener noreferrer">
+              Lihat repositori
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" aria-labelledby="contact-title">
+        <div class="contact-panel">
+          <div>
+            <p class="section-kicker">Temukan saya</p>
+            <h2 id="contact-title">Lihat aktivitas terbaru saya.</h2>
+            <p>Kunjungi GitHub untuk menjelajahi repositori dan perkembangan proyek.</p>
+          </div>
+          <a class="button button-primary" href="https://github.com/Sypdn" target="_blank" rel="noopener noreferrer">
+            Buka profil GitHub
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 4h6v6m-1-5-9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year">2026</span> Sypdn. Dibuat dengan rasa ingin tahu.</p>
+      <a class="footer-link" href="https://github.com/Sypdn" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
