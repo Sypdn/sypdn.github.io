@@ -7,7 +7,7 @@
      judul dan bingkai foto sebagai motif identitas. Sisanya netral.
    - Inter untuk teks (terbaca di layar kecil), JetBrains Mono hanya untuk aksen
      kode: peran yang diketik, level, tag, dan angka statistik.
-   - Radius: 10px untuk kontrol, 16px untuk kartu, 24px untuk foto. Tidak ada pil.
+   - Radius: 10px untuk kontrol, 16px untuk kartu, 32px untuk foto. Tidak ada pil.
    - Glassmorphism hanya di navbar saat scroll, tidak di tempat lain.
    - Glow hanya di hover ikon sosial dan tombol utama (aksen fokus).
    - Gerak: reveal saat scroll, hover ikon, gradien hero. Semua mati saat
@@ -561,56 +561,38 @@ button { font: inherit; color: inherit; }
 }
 .hero .social-row { margin-top: 32px; }
 
-/* Foto: bingkai tipis seperti logo S, dengan lapisan offset kanan-bawah */
+/* Foto: bingkai gradien + garis offset sebagai motif identitas */
 .photo-ring {
   position: relative;
-  isolation: isolate;
-  width: min(62vw, 264px);
+  width: min(62vw, 240px);
   aspect-ratio: 1;
-  padding: 7px;
-  border: 5px solid #43aef7;
-  border-radius: 36px;
-  background: var(--surface);
-  box-shadow: 0 12px 30px rgba(5, 10, 24, 0.2);
-  overflow: visible;
+  padding: 5px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
 }
 .photo-ring::before {
   content: "";
   position: absolute;
-  inset: 14px -14px -14px 14px;
-  z-index: -2;
-  border: 3px solid rgba(123, 92, 246, 0.72);
-  border-left-width: 1px;
-  border-top-width: 1px;
-  border-radius: 36px;
-  pointer-events: none;
-}
-.photo-ring::after {
-  content: "";
-  position: absolute;
-  inset: -5px;
+  inset: 0;
+  transform: translate(12px, 12px);
+  border: 1px solid var(--accent-2);
+  border-radius: 32px;
+  opacity: 0.6;
   z-index: -1;
-  border: 2px solid transparent;
-  border-right-color: rgba(139, 92, 246, 0.92);
-  border-bottom-color: rgba(139, 92, 246, 0.92);
-  border-radius: 36px;
-  pointer-events: none;
 }
 .photo-ring img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
-  border: 0;
-  border-radius: 24px;
+  border-radius: 27px;
   background: #fff;
 }
 .photo-fallback {
   position: absolute;
-  inset: 7px;
+  inset: 5px;
   display: none;
   place-items: center;
-  border-radius: 24px;
+  border-radius: 27px;
   background: var(--surface);
   color: var(--accent);
   font-family: "JetBrains Mono", ui-monospace, monospace;
