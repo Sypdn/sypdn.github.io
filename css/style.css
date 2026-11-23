@@ -384,17 +384,6 @@ button { font: inherit; color: inherit; }
 /* Warna khas tiap platform, muncul saat hover/fokus */
 .social[data-id="github"] { --brand: #181717; }
 [data-theme="dark"] .social[data-id="github"] { --brand: #f0f6fc; }
-.social[data-id="linkedin"] { --brand: #0a66c2; }
-.social[data-id="linkedin"] i {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 4px;
-  background: var(--brand);
-  color: #fff;
-  font-size: 16px;
-}
 .social[data-id="telegram"] { --brand: #26a5e4; }
 .social[data-id="tiktok"] { --brand: #fe2c55; }
 .social[data-id="instagram"] { --brand: #e4405f; }
