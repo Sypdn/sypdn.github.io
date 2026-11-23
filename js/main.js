@@ -35,6 +35,7 @@ const ROLES = [
 */
 const SOCIALS = [
   { id: 'github',    name: 'GitHub',    url: 'https://github.com/Sypdn',                  icon: 'fa-brands fa-github',    label: 'Buka GitHub Syaepuddin' },
+  { id: 'linkedin',  name: 'LinkedIn',  url: 'https://www.linkedin.com/in/syaepuddin-undefined-400842451', icon: 'fa-brands fa-linkedin', label: 'Buka LinkedIn Syaepuddin' },
   { id: 'telegram',  name: 'Telegram',  url: 'https://t.me/Sypdn',                        icon: 'fa-brands fa-telegram',  label: 'Buka Telegram Syaepuddin' },
   { id: 'tiktok',    name: 'TikTok',    url: 'https://www.tiktok.com/@sypdn__',           icon: 'fa-brands fa-tiktok',    label: 'Buka TikTok Syaepuddin' },
   { id: 'instagram', name: 'Instagram', url: 'https://www.instagram.com/sypdn____',       icon: 'fa-brands fa-instagram', label: 'Buka Instagram Syaepuddin' },
