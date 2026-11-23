@@ -561,42 +561,43 @@ button { font: inherit; color: inherit; }
 }
 .hero .social-row { margin-top: 32px; }
 
-/* Foto: bingkai gradien dengan garis tipis bergeser seperti logo */
+/* Foto: bingkai persegi bulat dengan lapisan luar biru-ungu */
 .photo-ring {
   position: relative;
   isolation: isolate;
-  width: min(62vw, 260px);
+  width: min(62vw, 264px);
   aspect-ratio: 1;
-  padding: 7px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, var(--accent) 0%, #4f83ff 55%, var(--accent-2) 100%);
+  padding: 8px;
+  border-radius: 34px;
+  background: linear-gradient(135deg, #43b7ff 0%, #48a2ff 52%, #8b5cf6 100%);
   box-shadow:
-    18px 18px 0 -12px color-mix(in srgb, var(--accent-2) 88%, transparent),
-    0 18px 42px rgba(56, 189, 248, 0.12);
+    12px 12px 0 -7px rgba(88, 91, 246, 0.96),
+    16px 16px 0 -8px rgba(139, 92, 246, 0.68),
+    0 20px 44px rgba(56, 189, 248, 0.14);
 }
 .photo-ring::before {
   content: "";
   position: absolute;
-  inset: 14px -16px -16px 14px;
+  inset: 10px -10px -10px 10px;
   z-index: -1;
-  border: 3px solid color-mix(in srgb, var(--accent-2) 72%, transparent);
-  border-radius: 30px;
+  border: 3px solid rgba(123, 92, 246, 0.88);
+  border-radius: 34px;
   pointer-events: none;
 }
 .photo-ring img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  border-radius: 23px;
+  border: 0;
+  border-radius: 26px;
   background: #fff;
 }
 .photo-fallback {
   position: absolute;
-  inset: 7px;
+  inset: 8px;
   display: none;
   place-items: center;
-  border-radius: 23px;
+  border-radius: 26px;
   background: var(--surface);
   color: var(--accent);
   font-family: "JetBrains Mono", ui-monospace, monospace;
