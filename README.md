@@ -30,7 +30,7 @@ sypdn.github.io/
 
 | Apa | Di mana |
 | --- | --- |
-| Foto profil | timpa `assets/foto.jpg` |
+| Foto profil | timpa `assets/foto.jpg` (sudah berisi ilustrasi manga pilihanmu) |
 | Link sosial media dan kontak | objek `SOCIALS` di `js/main.js` |
 | Level keahlian | array `SKILLS` di `js/main.js` (1 = Dasar, 2 = Menengah, 3 = Mahir) |
 | Daftar proyek, status, link Demo dan GitHub | array `PROJECTS` di `js/main.js` |
