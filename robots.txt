@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sypdn.github.io/sitemap.xml
