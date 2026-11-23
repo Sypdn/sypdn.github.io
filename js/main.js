@@ -26,7 +26,7 @@ const ROLES = [
 ];
 
 /* ---------- Sosial media dan kontak ----------
-   Cukup ubah di sini. Ikon di hero, bagian "Terhubung dengan Saya", dan footer
+   Cukup ubah di sini. Ikon di hero dan bagian "Terhubung dengan Saya"
    dirender dari daftar yang sama.
    - id      : dipakai untuk warna hover khas platform di CSS (data-id)
    - name    : teks tooltip

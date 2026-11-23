@@ -974,7 +974,6 @@ button { font: inherit; color: inherit; }
   font-weight: 500;
 }
 .to-top:hover { color: var(--accent); }
-.site-footer .social-row { justify-content: center; }
 
 @media (min-width: 800px) {
   .footer-inner {
