@@ -705,7 +705,7 @@ const GH_CARDS = [
     id: 'langs',
     alt: `Bahasa pemrograman yang paling sering dipakai ${GITHUB_USER} di GitHub`,
     width: 300, height: 165,
-    url: c => `https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USER}&layout=compact&langs_count=8&hide_border=true&bg_color=${c.bg}&title_color=${c.title}&text_color=${c.text}&locale=id`
+    url: c => `https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USER}&layout=compact&langs_count=8&hide_border=true&bg_color=${c.bg}&title_color=${c.title}&text_color=${c.text}&locale=id&custom_title=Bahasa%20Teratas`
   },
   {
     id: 'streak',
