@@ -169,17 +169,17 @@ const PROJECTS = [
     desc: 'Aplikasi Android untuk tagihan air desa: tambah pengguna, tagihan bulanan, rekap bulanan, dan ekspor PDF, dengan antarmuka bergaya liquid glass.',
     categories: ['android'],
     tags: ['Android', 'Java', 'Ekspor PDF'],
-    status: 'rencana',
+    status: 'selesai',
     featured: false,
     demo: '',
     github: ''
   },
   {
-    title: 'Website Pendataan PAM Bulanan',
-    desc: 'Website untuk mendata pemakaian air bulanan: nama, pemakaian, tagihan, harga per liter, harga satuan, dan total.',
-    categories: ['web'],
-    tags: ['PHP', 'MySQL'],
-    status: 'dikembangkan',
+    title: 'Aplikasi UMKM',
+    desc: 'Aplikasi berbasis Java untuk membantu pengelolaan dan pendataan usaha UMKM.',
+    categories: ['android'],
+    tags: ['Java'],
+    status: 'selesai',
     featured: false,
     demo: '',
     github: ''
@@ -189,7 +189,7 @@ const PROJECTS = [
     desc: 'Website profil untuk Desa Wanasaba Daya, Lombok Timur.',
     categories: ['web'],
     tags: ['Website', 'Profil desa'], // ganti dengan teknologi yang kamu pakai
-    status: 'dikembangkan',
+    status: 'selesai',
     featured: false,
     demo: '',
     github: ''
@@ -209,7 +209,7 @@ const PROJECTS = [
     desc: 'Sistem keamanan kendaraan berbasis ESP32 dengan sensor getaran, GPS, dan relay pemutus tegangan.',
     categories: ['iot'],
     tags: ['ESP32', 'Sensor getaran', 'GPS', 'Relay'],
-    status: 'dikembangkan',
+    status: 'selesai',
     featured: false,
     demo: '',
     github: ''
